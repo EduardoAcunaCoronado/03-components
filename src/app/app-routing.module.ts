@@ -104,6 +104,10 @@ const routes: Routes = [
     path: 'toast',
     loadChildren: () => import('./pages/toast/toast.module').then( m => m.ToastPageModule)
   },
+  {
+    path: 'champion',
+    loadChildren: () => import('./pages/champion/champion.module').then( m => m.ChampionPageModule)
+  },
 
  
 ];

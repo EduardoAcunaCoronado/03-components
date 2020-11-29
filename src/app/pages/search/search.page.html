@@ -6,7 +6,7 @@
       <ion-back-button defaultHref="/" color="primary"></ion-back-button>
     </ion-buttons>
 
-    <ion-title>Search</ion-title>
+    <ion-title>OP.GG</ion-title>
   </ion-toolbar>
 
   <ion-searchbar
@@ -22,11 +22,11 @@
 <ion-content>
 
   <ion-list>
-    <ion-item *ngFor="let champion of champions | filtro:textoBuscar:textoBuscar">
+    <ion-item *ngFor="let champion of champions | filtro:textoBuscar:textoBuscar" routerLink="/champion">
       <ion-avatar slot="start">
         <img src={{champion.icon}}>
       </ion-avatar>
-      <ion-label> {{ champion.name }} </ion-label>
+      <ion-label> {{champion.name}} </ion-label>
     </ion-item>
   </ion-list>
 
