@@ -22,7 +22,7 @@
 <ion-content>
 
   <ion-list>
-    <ion-item *ngFor="let champion of champions | filtro:textoBuscar:textoBuscar" routerLink="/champion">
+    <ion-item *ngFor="let champion of champions | filtro:textoBuscar:textoBuscar" (click)="goToChampion(champion)">
       <ion-avatar slot="start">
         <img src={{champion.icon}}>
       </ion-avatar>

@@ -106,11 +106,9 @@ const routes: Routes = [
     loadChildren: () => import('./pages/toast/toast.module').then( m => m.ToastPageModule)
   },
   {
-    path: 'champion',
+    path: 'champion/:id',
     loadChildren: () => import('./pages/champion/champion.module').then( m => m.ChampionPageModule)
-  },
-
- 
+  }
 ];
 
 @NgModule({

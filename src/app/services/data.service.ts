@@ -8,7 +8,21 @@ import { delay } from 'rxjs/operators';
 })
 export class DataService {
 
+  private championSelected: any;
+
   constructor(private http: HttpClient) { }
+
+  getChampionSelected(): any {
+    return this.championSelected;
+  }
+  
+  setChampionSelected(championSelected: any) {
+    this.championSelected = championSelected;
+  }
+
+  getChampions() {
+    return this.http.get<any[]>('/assets/data/champions.json');
+  }
 
   getUsuarios() {
     return this.http.get('https://jsonplaceholder.typicode.com/users');
@@ -16,10 +30,6 @@ export class DataService {
 
   getAlbumes() {
     return this.http.get<any[]>('https://jsonplaceholder.typicode.com/albums');
-  }
-
-  getChampions() {
-    return this.http.get<any[]>('/assets/data/champions.json');
   }
 
   getMenuOpts() {

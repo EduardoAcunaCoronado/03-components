@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'app-champion',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChampionPage implements OnInit {
 
-  constructor() { }
+  public champion;
+
+  constructor(private dataService: DataService) { }
 
   ngOnInit() {
+    this.champion = this.dataService.getChampionSelected();
+    console.log(this.champion);
   }
 
 }
